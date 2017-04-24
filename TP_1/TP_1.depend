@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1491154595 source:c:\users\monica\documents\github\programacion_1_laboratorio_1\tp_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesTP1.h"
+
+1491154493 c:\users\monica\documents\github\programacion_1_laboratorio_1\tp_1\funcionestp1.h
+
+1491154463 source:c:\users\monica\documents\github\programacion_1_laboratorio_1\tp_1\funcionestp1.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionesTP1.h"
+
