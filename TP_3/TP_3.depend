@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1496334062 source:c:\users\monica\documents\gabi\utn\p_1_l_1\2017\tps\tp_3\funcionestp3.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesTP3.h"
+
+1496331516 c:\users\monica\documents\gabi\utn\p_1_l_1\2017\tps\tp_3\funcionestp3.h
+
+1496332646 source:c:\users\monica\documents\gabi\utn\p_1_l_1\2017\tps\tp_3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesTP3.h"
+
+1496334204 source:c:\users\monica\documents\gabi\utn\p_1_l_1\trabajos_practicos\tp_laboratorio_1\tp_3\funcionestp3.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesTP3.h"
+
+1496331516 c:\users\monica\documents\gabi\utn\p_1_l_1\trabajos_practicos\tp_laboratorio_1\tp_3\funcionestp3.h
+
+1496334420 source:c:\users\monica\documents\gabi\utn\p_1_l_1\trabajos_practicos\tp_laboratorio_1\tp_3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesTP3.h"
+
