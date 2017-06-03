@@ -376,7 +376,7 @@ void leerBinario(eMovie* peliculaArray, int cantidad)
 {
     FILE *f;
 
-    f=fopen("bin.dat", "rb+");
+    f=fopen("bin.dat", "rb");
     if(f==NULL)
     {
         f=fopen("bin.dat", "wb");
