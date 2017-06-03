@@ -222,14 +222,14 @@ void mostrarPeliculas(eMovie* peliculaArray,int tam)
     int i;
 
     printf("\n\n");
-    printf("%3s%20s%25s%21s%21s","ID","TITULO","GENERO","DURACION","PUNTAJE\n\n");
+    printf("%3s%20s%22s%15s%15s","ID","TITULO","GENERO","DURACION","PUNTAJE\n\n");
     if(peliculaArray!=NULL && tam>0)
     {
         for(i=0; i<tam; i++)
         {
             if(peliculaArray[i].estado==1)
             {
-                printf("%3d%25s%22s%18d%18d\n", peliculaArray[i].id, peliculaArray[i].titulo, peliculaArray[i].genero,peliculaArray[i].duracion,peliculaArray[i].puntaje);
+                printf("%3d%25s%19s%12d%12d\n", peliculaArray[i].id, peliculaArray[i].titulo, peliculaArray[i].genero,peliculaArray[i].duracion,peliculaArray[i].puntaje);
             }
         }
     }
@@ -284,19 +284,16 @@ void modificarPelicula(eMovie* peliculaArray, int indice)
         obtenerTitulo(auxTitulo);
         strcpy(peliculaArray[indice].titulo,auxTitulo);
         printf("\nMODIFICACION REALIZADA EXITOSAMENTE\n");
-        getchar();
         break;
     case 2:
         obtenerGenero(auxGenero);
         strcpy(peliculaArray[indice].genero,auxGenero);
         printf("\nMODIFICACION REALIZADA EXITOSAMENTE\n");
-        getchar();
         break;
     case 3:
         auxDuracion=getValidInt("\nIngrese duracion: ","\nLA DURACION DEBE SER NUMERICA\n",1,240);
         peliculaArray[indice].duracion=auxDuracion;
         printf("\nMODIFICACION REALIZADA EXITOSAMENTE\n");
-        getchar();
         break;
     case 4:
         printf("\nIngrese descripcion de pelicula: ");
@@ -304,13 +301,11 @@ void modificarPelicula(eMovie* peliculaArray, int indice)
         gets(auxDescripcion);
         strcpy(peliculaArray[indice].descripcion,auxDescripcion);
         printf("\nMODIFICACION REALIZADA EXITOSAMENTE\n");
-        getchar();
         break;
     case 5:
         auxPuntaje=getValidInt("\nIngrese puntaje: ","\nEL PUNTAJE DEBE SER NUMERICO\n",1,10);
         peliculaArray[indice].puntaje=auxPuntaje;
         printf("\nMODIFICACION REALIZADA EXITOSAMENTE\n");
-        getchar();
         break;
     case 6:
         printf("\nIngrese link de la imagen: ");
@@ -318,10 +313,9 @@ void modificarPelicula(eMovie* peliculaArray, int indice)
         gets(auxlinkImagen);
         strcpy(peliculaArray[indice].linkImagen,auxlinkImagen);
         printf("\nMODIFICACION REALIZADA EXITOSAMENTE\n");
-        getchar();
         break;
     case 7:
-        printf("NO SE REALIZO NINGUNA MODIFICACION");
+        printf("\n\tNO SE REALIZO NINGUNA MODIFICACION\n");
         break;
     default:
         break;

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "funcionesTP3.h"
-#define MAX_CANTIDAD 100
+#define MAX_CANTIDAD 1000
 
 int main()
 {
@@ -36,12 +36,12 @@ int main()
             mostrarPeliculas(peliculaArray,MAX_CANTIDAD);
             printf("\n\n");
 
-            auxID=getValidInt("\nIngrese el ID de la pelicula a dar de baja: ","\nEl ID de la pelicula debe ser numerico\n", 1, 1000);
+            auxID=getValidInt("\nIngrese el ID de la pelicula a dar de baja: ","\nEl ID debe ser numerico\n", 1, 1000);
             buscarIndice = buscarID(peliculaArray,MAX_CANTIDAD,auxID);
 
             if(buscarIndice==-1)
             {
-                printf("\n\tNO SE EXISTE EL ID INGRESADO\n\n");
+                printf("\n\tNO EXISTE EL ID INGRESADO\n\n");
                 fflush(stdin);
                 getchar();
                 break;
@@ -53,11 +53,11 @@ int main()
             mostrarPeliculas(peliculaArray,MAX_CANTIDAD);
             printf("\n\n");
 
-            auxID=getValidInt("\nIngrese el ID de la pelicula a modificar: ","\nEl ID de la pelicula debe ser numerico\n", 1, 1000);
+            auxID=getValidInt("\nIngrese el ID de la pelicula a modificar: ","\nEl ID debe ser numerico\n", 1, 1000);
             buscarIndice=buscarID(peliculaArray,MAX_CANTIDAD,auxID);
             if(buscarIndice==-1)
             {
-                printf("\n\tNO SE EXISTE EL ID INGRESADO\n\n\n\n");
+                printf("\n\tNO EXISTE EL ID INGRESADO\n\n\n\n");
                 fflush(stdin);
                 getchar();
                 break;
