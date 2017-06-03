@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include "funcionesTP3.h"
-#define MAX_CANTIDAD 1000
+#define MAX_CANTIDAD 10
 
 int main()
 {
     char seguir='s';
-    int opcion, lugarLibre, buscarIndice, auxID;
+    int opcion, lugarLibre, flag=0, buscarIndice, auxID;
 
     eMovie peliculaArray[MAX_CANTIDAD];
     estadoPelicula(peliculaArray,MAX_CANTIDAD,0);
@@ -28,16 +28,18 @@ int main()
                 getchar();
                 break;
             }
-            generarID(peliculaArray,MAX_CANTIDAD);
+            if(flag==0)
+            {
+                generarID(peliculaArray,MAX_CANTIDAD);
+                flag=1;
+            }
             agregarPelicula(peliculaArray,lugarLibre);
             break;
         case 2:
             system("cls");
             mostrarPeliculas(peliculaArray,MAX_CANTIDAD);
-            printf("\n\n");
-
-            auxID=getValidInt("\nIngrese el ID de la pelicula a dar de baja: ","\nEl ID debe ser numerico\n", 1, 1000);
-            buscarIndice = buscarID(peliculaArray,MAX_CANTIDAD,auxID);
+            auxID=getValidInt("\n\n\nIngrese el ID de la pelicula a dar de baja: ","\nEl ID debe ser numerico\n", 1, 1000);
+            buscarIndice=buscarID(peliculaArray,MAX_CANTIDAD,auxID);
 
             if(buscarIndice==-1)
             {

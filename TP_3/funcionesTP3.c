@@ -6,7 +6,8 @@
 void estadoPelicula(eMovie* peliculaArray,int tam,int valor)
 {
     int i;
-    if(peliculaArray!=NULL && tam>0)
+
+    if(peliculaArray!=NULL)
     {
         for(i=0; i<tam; i++)
         {
@@ -15,10 +16,23 @@ void estadoPelicula(eMovie* peliculaArray,int tam,int valor)
     }
 }
 
+void generarID(eMovie* peliculaArray,int tam)
+{
+    int i;
+
+    if(peliculaArray!=NULL)
+    {
+        for(i=0; i<tam; i++)
+        {
+            peliculaArray[i].id=i+1;
+        }
+    }
+}
+
 int buscarLugarLibre(eMovie* peliculaArray,int tam)
 {
     int i;
-    if(peliculaArray!=NULL && tam>0)
+    if(peliculaArray!=NULL)
     {
         for(i=0; i<tam; i++)
         {
@@ -34,7 +48,7 @@ int buscarLugarLibre(eMovie* peliculaArray,int tam)
 int buscarID(eMovie* peliculaArray,int tam,char auxID)
 {
     int i;
-    if(peliculaArray!=NULL && tam>0)
+    if(peliculaArray!=NULL)
     {
         for(i=0; i<tam; i++)
         {
@@ -67,24 +81,6 @@ int menuOpciones()
     }
     opcion=aux;
     return opcion;
-}
-
-void generarID(eMovie* peliculaArray,int tam)
-{
-    int i;
-    int j;
-    peliculaArray[0].id=1;
-
-    if(peliculaArray!=NULL && tam>0)
-    {
-        for(i=0; i<tam; i++)
-        {
-            for(j=i+1; j<tam; j++)
-            {
-                peliculaArray[j].id=peliculaArray[i].id+1;
-            }
-        }
-    }
 }
 
 int esAlfaNumerico(char nombre[])
@@ -170,10 +166,10 @@ int getValidInt(char requestMessage[],char errorMessage[], int lowLimit, int hiL
             printf ("%s\n",errorMessage);
             continue;
         }
-        auxInt = atoi(auxStr);
+        auxInt=atoi(auxStr);
         if(auxInt < lowLimit || auxInt > hiLimit)
         {
-            printf ("El valor debe ser mayor a %d y menor a %d\n",lowLimit,hiLimit);
+            printf ("El ID debe ser mayor a %d y menor a %d\n",lowLimit,hiLimit);
             continue;
         }
         return auxInt;
@@ -223,13 +219,13 @@ void mostrarPeliculas(eMovie* peliculaArray,int tam)
 
     printf("\n\n");
     printf("%3s%20s%22s%15s%15s","ID","TITULO","GENERO","DURACION","PUNTAJE\n\n");
-    if(peliculaArray!=NULL && tam>0)
+    if(peliculaArray!=NULL)
     {
         for(i=0; i<tam; i++)
         {
             if(peliculaArray[i].estado==1)
             {
-                printf("%3d%25s%19s%12d%12d\n", peliculaArray[i].id, peliculaArray[i].titulo, peliculaArray[i].genero,peliculaArray[i].duracion,peliculaArray[i].puntaje);
+                printf("%3d%25s%19s%12d%12d\n", peliculaArray[i].id, peliculaArray[i].titulo, peliculaArray[i].genero, peliculaArray[i].duracion, peliculaArray[i].puntaje);
             }
         }
     }
@@ -376,7 +372,7 @@ void leerBinario(eMovie* peliculaArray, int cantidad)
         f=fopen("bin.dat", "wb");
 
     }
-    if(f == NULL)
+    if(f==NULL)
     {
         printf("NO SE PUDO ABRIR EL ARCHIVO");
         exit(1);

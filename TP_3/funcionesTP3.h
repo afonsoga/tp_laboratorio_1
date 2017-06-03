@@ -22,6 +22,13 @@ typedef struct
  */
 void estadoPelicula(eMovie* peliculaArray,int tam,int valor);
 /**
+ * \brief Generar el ID automaticamente
+ * \param abonadoArray Es el array pasado por parametro
+ * \param tam Es el tamaño del array
+ * \return void
+ */
+void generarID(eMovie* peliculaArray,int tam);
+/**
  * \brief Busca el primer lugar no libre en el array
  * \param abonadoArray Es el array pasado por parametro
  * \param tam Es el tamaño del array
@@ -40,13 +47,6 @@ int buscarID(eMovie* peliculaArray,int tam,char auxID);
  * \return la opcion elegida del menu
  */
 int menuOpciones();
-/**
- * \brief Generar el ID automaticamente
- * \param abonadoArray Es el array pasado por parametro
- * \param tam Es el tamaño del array
- * \return void
- */
-void generarID(eMovie* peliculaArray,int tam);
 /**\brief Verifica si el valor recibido contiene solo letras y números
  * \param nombre Array con la cadena a ser analizada
  * \return 1 si contiene solo espacio o letras y números, y 0 si no lo es
